@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-name" content="csrf5dc345333b6f9">
+	<meta name="csrf-value" content="e4b75871d03862637822bee158e43371">
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>	<meta name="cart-hash" content="d751713988987e9331980363e24189ce">
+	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>Red background with gold glitter and star shaped Vector Image</title>
+	<meta name="description" content="Red background with gold glitter and star shaped confetti. Vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions. ID #26201184.">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/red-background-with-gold-glitter-and-star-shaped-vector-26201184">
+	<meta property="og:title" content="Red background with gold glitter and star shaped vector image on VectorStock">
+	<meta property="og:description" content="Red background with gold glitter and star shaped confetti. Vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+	<meta property="og:image:url" content="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+	<meta property="og:image:secure_url" content="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/red-background-with-gold-glitter-and-star-shaped-vector-26201184">
+	<meta name="twitter:title" content="Red background with gold glitter and star shaped vector image">
+	<meta name="twitter:description" content="Red background with gold glitter and star shaped confetti. Vector illustration.">
+	<meta name="twitter:image" content="https://cdn5.vectorstock.com/i/thumb-large/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/red-background-with-gold-glitter-and-star-shaped-vector-26201184">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1571873681.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1571873681.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1572910191.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1572910191.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox"
+				 class="empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off" autocapitalize="none" spellcheck="true" value="" placeholder="Search…" maxlength="50" autofocus>
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category" value="">
+							<input type="hidden" name="custom_srp" value="">
+							<input type="hidden" name="artist" value="">
+							<input type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Popular
+						Categories</a></li>
+					<li><button type="button" data-action="signup">Sign Up</button></li>
+				</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul role="tablist">
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="20">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors/background-email-star-vectors">
+							<span itemprop="name">Background Email Star Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>
+					Red background with gold glitter and star shaped vector&nbsp;image														</h1>
+
+				<figure style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg" title="Red background with gold glitter and star shaped vector image" alt="Red background with gold glitter and star shaped"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg" title="Red background with gold glitter and star shaped vector image" alt="Red background with gold glitter and star shaped">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3" data-payment="single-image">
+					<input type="hidden" id="vector_id" value="26201184">
+					<input type="hidden" id="vector_title" value="Red background with gold glitter and star shaped">
+					<input type="hidden" id="vector_description" value="Red background with gold glitter and star shaped confetti. Vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/red-background-with-gold-glitter-and-star-shaped-vector-26201184">
+					<input type="hidden" id="vector_media" value="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+					<input type="hidden" id="vector_ratio" value="1">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="MsMoloko">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="optgroup radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked" tabindex="5">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-As-You-Go Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+													</div>
+						<!--
+						-- OPTION: Customization
+						-->
+						<div class="option" data-type="customization">
+							<h6><span class="type">New Option!</span><a href="/faq/members/what-is-hire-a-designer">What is this?</a></h6>
+							<div class="optgroup chkgroup">
+								<fieldset>
+									<label for="f_payment_customization" class="checked_">
+										<input type="checkbox" id="f_payment_customization" name="payment_customization" data-cost="84" value="customization" tabindex="12">
+										<span class="label">Customize image</span>
+										<span class="value"><small>$</small><var>84.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>Love the image but just need a few modifications? Let our talented artists do the work for you!</p>
+								<p>We'll connect you with a designer who can make updates and send you the artwork in a format of your choice.</p>
+								<h4>Examples</h4>
+								<ul>
+									<li>Change the text</li>
+									<li>Modify colors</li>
+									<li>Resize to new dimensions</li>
+									<li>Include logo or symbol</li>
+									<li>Add your company or business name</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="icon"></span>
+						</button>
+						<h6><span class="label">Files Included</span></h6>
+						<div class="help">
+							<span class="loading"><span class="label">Loading Details...</span></span>
+						</div>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="square" style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg" title="Red background with gold glitter and star shaped vector image" alt="Red background with gold glitter and star shaped"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg" title="Red background with gold glitter and star shaped vector image" alt="Red background with gold glitter and star shaped">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>26201184</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_MsMoloko" rel="nofollow">MsMoloko</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options" data-total="2">
+						<ul>
+							<li class="opt-like">
+								<button type="button" data-action="like" data-count="0"><span class="icon">&hearts;</span><span class="label">Like</span><span class="tally"></span></button>
+							</li>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="icon">+</span><span class="label">Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemtype="http://schema.org/Product" itemscope>
+					<meta itemprop="sku" content="26201184">
+					<meta itemprop="productID" content="26201184">
+					<meta itemprop="name" content="Red background with gold glitter and star shaped">
+					<meta itemprop="description" content="Red background with gold glitter and star shaped confetti. Vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<meta itemprop="releaseDate" content="2019-07-10">
+					<link itemprop="image" href="https://cdn5.vectorstock.com/i/1000x1000/11/84/red-background-with-gold-glitter-and-star-shaped-vector-26201184.jpg">
+					
+					<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+						<meta itemprop="name" content="VectorStock">
+					</div>
+					<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+						<link itemprop="url" href="https://www.vectorstock.com/royalty-free-vector/red-background-with-gold-glitter-and-star-shaped-vector-26201184">
+						<meta itemprop="availability" content="https://schema.org/InStock">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/88/44/merry-christmas-greeting-wit-vector-22968844.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-greeting-wit-vector-22968844" title="merry christmas greeting wit vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/88/44/merry-christmas-greeting-wit-vector-22968844.jpg" title="merry christmas greeting wit" alt="merry christmas greeting wit vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/10/08/black-friday-lettering-red-glitter-sparkle-vector-21681008.jpg"><a href="//www.vectorstock.com/royalty-free-vector/black-friday-lettering-red-glitter-sparkle-vector-21681008" title="black friday lettering red glitter sparkle vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/10/08/black-friday-lettering-red-glitter-sparkle-vector-21681008.jpg" title="black friday lettering red glitter sparkle" alt="black friday lettering red glitter sparkle vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/14/93/fantasy-christmas-fir-tree-of-gears-with-red-vector-22641493.jpg"><a href="//www.vectorstock.com/royalty-free-vector/fantasy-christmas-fir-tree-of-gears-with-red-vector-22641493" title="fantasy christmas fir-tree of gears with red vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/14/93/fantasy-christmas-fir-tree-of-gears-with-red-vector-22641493.jpg" title="fantasy christmas fir-tree of gears with red" alt="fantasy christmas fir-tree of gears with red vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/70/59/gold-sparkling-glitter-christmas-tree-vector-22847059.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gold-sparkling-glitter-christmas-tree-vector-22847059" title="gold sparkling glitter christmas tree vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/70/59/gold-sparkling-glitter-christmas-tree-vector-22847059.jpg" title="gold sparkling glitter christmas tree" alt="gold sparkling glitter christmas tree vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/79/46/sparkling-gold-and-silver-snowflakes-background-vector-27047946.jpg"><a href="//www.vectorstock.com/royalty-free-vector/sparkling-gold-and-silver-snowflakes-background-vector-27047946" title="sparkling gold and silver snowflakes background vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/79/46/sparkling-gold-and-silver-snowflakes-background-vector-27047946.jpg" title="sparkling gold and silver snowflakes background" alt="sparkling gold and silver snowflakes background vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/02/59/greeting-cards-with-red-bows-and-christmas-tree-vector-21570259.jpg"><a href="//www.vectorstock.com/royalty-free-vector/greeting-cards-with-red-bows-and-christmas-tree-vector-21570259" title="greeting cards with red bows and christmas tree vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/02/59/greeting-cards-with-red-bows-and-christmas-tree-vector-21570259.jpg" title="greeting cards with red bows and christmas tree" alt="greeting cards with red bows and christmas tree vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/15/31/christmas-golden-stars-vector-22501531.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-golden-stars-vector-22501531" title="christmas golden stars vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/15/31/christmas-golden-stars-vector-22501531.jpg" title="christmas golden stars" alt="christmas golden stars vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/05/68/christmas-red-card-christmas-stars-vector-1910568.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-red-card-christmas-stars-vector-1910568" title="Christmas Red Card Christmas Stars vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/05/68/christmas-red-card-christmas-stars-vector-1910568.jpg" title="Christmas Red Card Christmas Stars" alt="Christmas Red Card Christmas Stars vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/97/98/abstract-christmas-background-with-bow-vector-1769798.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-christmas-background-with-bow-vector-1769798" title="Abstract Christmas background with bow vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/97/98/abstract-christmas-background-with-bow-vector-1769798.jpg" title="Abstract Christmas background with bow" alt="Abstract Christmas background with bow vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/06/92/merry-christmas-party-poster-with-hand-drawn-vector-23090692.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-party-poster-with-hand-drawn-vector-23090692" title="merry christmas party poster with hand-drawn vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/06/92/merry-christmas-party-poster-with-hand-drawn-vector-23090692.jpg" title="merry christmas party poster with hand-drawn" alt="merry christmas party poster with hand-drawn vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/57/76/christmas-tree-card-background-red-christmas-tree-vector-27185776.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-tree-card-background-red-christmas-tree-vector-27185776" title="christmas tree card background red christmas tree vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/57/76/christmas-tree-card-background-red-christmas-tree-vector-27185776.jpg" title="christmas tree card background red christmas tree" alt="christmas tree card background red christmas tree vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/64/81/christmas-banners-set-with-fir-branches-with-gold-vector-22376481.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-banners-set-with-fir-branches-with-gold-vector-22376481" title="christmas banners set with fir branches with gold vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/64/81/christmas-banners-set-with-fir-branches-with-gold-vector-22376481.jpg" title="christmas banners set with fir branches with gold" alt="christmas banners set with fir branches with gold vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/79/63/abstract-black-background-with-pink-glitter-vector-23867963.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-black-background-with-pink-glitter-vector-23867963" title="abstract black background with pink glitter vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/79/63/abstract-black-background-with-pink-glitter-vector-23867963.jpg" title="abstract black background with pink glitter" alt="abstract black background with pink glitter vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/24/90/merry-christmas-and-happy-new-year-2019-vector-23332490.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-and-happy-new-year-2019-vector-23332490" title="merry christmas and happy new year 2019 vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/24/90/merry-christmas-and-happy-new-year-2019-vector-23332490.jpg" title="merry christmas and happy new year 2019" alt="merry christmas and happy new year 2019 vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/40/77/decorative-poster-with-bright-glitter-stars-vector-23044077.jpg"><a href="//www.vectorstock.com/royalty-free-vector/decorative-poster-with-bright-glitter-stars-vector-23044077" title="decorative poster with bright glitter stars vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/40/77/decorative-poster-with-bright-glitter-stars-vector-23044077.jpg" title="decorative poster with bright glitter stars" alt="decorative poster with bright glitter stars vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/35/37/christmas-banner-and-design-elements-in-red-vector-22723537.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-banner-and-design-elements-in-red-vector-22723537" title="christmas banner and design elements in red vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/35/37/christmas-banner-and-design-elements-in-red-vector-22723537.jpg" title="christmas banner and design elements in red" alt="christmas banner and design elements in red vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/91/96/green-christmas-day-paper-postcard-snowflake-star-vector-22999196.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-christmas-day-paper-postcard-snowflake-star-vector-22999196" title="green christmas day paper postcard snowflake star vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/91/96/green-christmas-day-paper-postcard-snowflake-star-vector-22999196.jpg" title="green christmas day paper postcard snowflake star" alt="green christmas day paper postcard snowflake star vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/12/33/christmas-party-flyer-with-shiny-gold-vector-22621233.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-party-flyer-with-shiny-gold-vector-22621233" title="christmas party flyer with shiny gold vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/12/33/christmas-party-flyer-with-shiny-gold-vector-22621233.jpg" title="christmas party flyer with shiny gold" alt="christmas party flyer with shiny gold vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/39/88/merry-christmas-and-happy-new-year-2020-greeting-vector-26843988.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-and-happy-new-year-2020-greeting-vector-26843988" title="merry christmas and happy new year 2020 greeting vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/39/88/merry-christmas-and-happy-new-year-2020-greeting-vector-26843988.jpg" title="merry christmas and happy new year 2020 greeting" alt="merry christmas and happy new year 2020 greeting vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/62/69/realistic-snowflakes-wave-vector-22866269.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-snowflakes-wave-vector-22866269" title="realistic snowflakes wave vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/62/69/realistic-snowflakes-wave-vector-22866269.jpg" title="realistic snowflakes wave" alt="realistic snowflakes wave vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="13525229" data-title="red glittering star dust" data-src="https://cdn5.vectorstock.com/i/thumbs/52/29/red-glittering-star-dust-vector-13525229.jpg"><a href="//www.vectorstock.com/royalty-free-vector/red-glittering-star-dust-vector-13525229" title="red glittering star dust vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/52/29/red-glittering-star-dust-vector-13525229.jpg" title="red glittering star dust" alt="red glittering star dust vector image"></noscript></a></li>
+						<li data-id="21409449" data-title="merry christmas background with snow and lights" data-src="https://cdn5.vectorstock.com/i/thumbs/94/49/merry-christmas-background-with-snow-and-lights-vector-21409449.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-background-with-snow-and-lights-vector-21409449" title="merry christmas background with snow and lights vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/94/49/merry-christmas-background-with-snow-and-lights-vector-21409449.jpg" title="merry christmas background with snow and lights" alt="merry christmas background with snow and lights vector image"></noscript></a></li>
+						<li data-id="27145231" data-title="happy new year 2020 gold shiny glitter glowing" data-src="https://cdn2.vectorstock.com/i/thumbs/52/31/happy-new-year-2020-gold-shiny-glitter-glowing-vector-27145231.jpg"><a href="//www.vectorstock.com/royalty-free-vector/happy-new-year-2020-gold-shiny-glitter-glowing-vector-27145231" title="happy new year 2020 gold shiny glitter glowing vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/52/31/happy-new-year-2020-gold-shiny-glitter-glowing-vector-27145231.jpg" title="happy new year 2020 gold shiny glitter glowing" alt="happy new year 2020 gold shiny glitter glowing vector image"></noscript></a></li>
+						<li data-id="23101868" data-title="luxury christmas design with red christmas balls" data-src="https://cdn4.vectorstock.com/i/thumbs/18/68/luxury-christmas-design-with-red-christmas-balls-vector-23101868.jpg"><a href="//www.vectorstock.com/royalty-free-vector/luxury-christmas-design-with-red-christmas-balls-vector-23101868" title="luxury christmas design with red christmas balls vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/18/68/luxury-christmas-design-with-red-christmas-balls-vector-23101868.jpg" title="luxury christmas design with red christmas balls" alt="luxury christmas design with red christmas balls vector image"></noscript></a></li>
+						<li data-id="23245757" data-title="winter sale poster template hanging red gift tag" data-src="https://cdn3.vectorstock.com/i/thumbs/57/57/winter-sale-poster-template-hanging-red-gift-tag-vector-23245757.jpg"><a href="//www.vectorstock.com/royalty-free-vector/winter-sale-poster-template-hanging-red-gift-tag-vector-23245757" title="winter sale poster template hanging red gift tag vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/57/57/winter-sale-poster-template-hanging-red-gift-tag-vector-23245757.jpg" title="winter sale poster template hanging red gift tag" alt="winter sale poster template hanging red gift tag vector image"></noscript></a></li>
+						<li data-id="6890425" data-title="Shiny silver background with red bow" data-src="https://cdn1.vectorstock.com/i/thumbs/04/25/shiny-silver-background-with-red-bow-vector-6890425.jpg"><a href="//www.vectorstock.com/royalty-free-vector/shiny-silver-background-with-red-bow-vector-6890425" title="Shiny silver background with red bow vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/04/25/shiny-silver-background-with-red-bow-vector-6890425.jpg" title="Shiny silver background with red bow" alt="Shiny silver background with red bow vector image"></noscript></a></li>
+						<li data-id="25673022" data-title="christmas and new year card" data-src="https://cdn3.vectorstock.com/i/thumbs/30/22/christmas-and-new-year-card-vector-25673022.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-and-new-year-card-vector-25673022" title="christmas and new year card vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/30/22/christmas-and-new-year-card-vector-25673022.jpg" title="christmas and new year card" alt="christmas and new year card vector image"></noscript></a></li>
+						<li data-id="22845551" data-title="merry christmas and new year background with" data-src="https://cdn2.vectorstock.com/i/thumbs/55/51/merry-christmas-and-new-year-background-with-vector-22845551.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-and-new-year-background-with-vector-22845551" title="merry christmas and new year background with vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/55/51/merry-christmas-and-new-year-background-with-vector-22845551.jpg" title="merry christmas and new year background with" alt="merry christmas and new year background with vector image"></noscript></a></li>
+						<li data-id="23225747" data-title="template of glass transparent christmas balls" data-src="https://cdn3.vectorstock.com/i/thumbs/57/47/template-of-glass-transparent-christmas-balls-vector-23225747.jpg"><a href="//www.vectorstock.com/royalty-free-vector/template-of-glass-transparent-christmas-balls-vector-23225747" title="template of glass transparent christmas balls vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/57/47/template-of-glass-transparent-christmas-balls-vector-23225747.jpg" title="template of glass transparent christmas balls" alt="template of glass transparent christmas balls vector image"></noscript></a></li>
+						<li data-id="1446940" data-title="Christmas background or card with red ribbon" data-src="https://cdn1.vectorstock.com/i/thumbs/69/40/christmas-background-or-card-with-red-ribbon-vector-1446940.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-background-or-card-with-red-ribbon-vector-1446940" title="Christmas background or card with red ribbon vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/69/40/christmas-background-or-card-with-red-ribbon-vector-1446940.jpg" title="Christmas background or card with red ribbon" alt="Christmas background or card with red ribbon vector image"></noscript></a></li>
+						<li data-id="13905134" data-title="christmas wreath on red background circle" data-src="https://cdn5.vectorstock.com/i/thumbs/51/34/christmas-wreath-on-red-background-circle-vector-13905134.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-wreath-on-red-background-circle-vector-13905134" title="christmas wreath on red background circle vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/51/34/christmas-wreath-on-red-background-circle-vector-13905134.jpg" title="christmas wreath on red background circle" alt="christmas wreath on red background circle vector image"></noscript></a></li>
+						<li data-id="23497830" data-title="merry christmas and happy new year background" data-src="https://cdn1.vectorstock.com/i/thumbs/78/30/merry-christmas-and-happy-new-year-background-vector-23497830.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-and-happy-new-year-background-vector-23497830" title="merry christmas and happy new year background vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/78/30/merry-christmas-and-happy-new-year-background-vector-23497830.jpg" title="merry christmas and happy new year background" alt="merry christmas and happy new year background vector image"></noscript></a></li>
+						<li data-id="1759046" data-title="Christmas ornament background card" data-src="https://cdn2.vectorstock.com/i/thumbs/90/46/christmas-ornament-background-card-vector-1759046.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-ornament-background-card-vector-1759046" title="Christmas ornament background card vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/90/46/christmas-ornament-background-card-vector-1759046.jpg" title="Christmas ornament background card" alt="Christmas ornament background card vector image"></noscript></a></li>
+						<li data-id="2340595" data-title="Christmas background with copyspace EPS 8" data-src="https://cdn1.vectorstock.com/i/thumbs/05/95/christmas-background-with-copyspace-eps-8-vector-2340595.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-background-with-copyspace-eps-8-vector-2340595" title="Christmas background with copyspace EPS 8 vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/05/95/christmas-background-with-copyspace-eps-8-vector-2340595.jpg" title="Christmas background with copyspace EPS 8" alt="Christmas background with copyspace EPS 8 vector image"></noscript></a></li>
+						<li data-id="21963908" data-title="christmas new year greeting card templates" data-src="https://cdn4.vectorstock.com/i/thumbs/39/08/christmas-new-year-greeting-card-templates-vector-21963908.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-new-year-greeting-card-templates-vector-21963908" title="christmas new year greeting card templates vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/39/08/christmas-new-year-greeting-card-templates-vector-21963908.jpg" title="christmas new year greeting card templates" alt="christmas new year greeting card templates vector image"></noscript></a></li>
+						<li data-id="22317329" data-title="banner or flyer with golden christmas tree" data-src="https://cdn5.vectorstock.com/i/thumbs/73/29/banner-or-flyer-with-golden-christmas-tree-vector-22317329.jpg"><a href="//www.vectorstock.com/royalty-free-vector/banner-or-flyer-with-golden-christmas-tree-vector-22317329" title="banner or flyer with golden christmas tree vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/73/29/banner-or-flyer-with-golden-christmas-tree-vector-22317329.jpg" title="banner or flyer with golden christmas tree" alt="banner or flyer with golden christmas tree vector image"></noscript></a></li>
+						<li data-id="22450539" data-title="four-pointed star abstract lights christmas" data-src="https://cdn5.vectorstock.com/i/thumbs/05/39/four-pointed-star-abstract-lights-christmas-vector-22450539.jpg"><a href="//www.vectorstock.com/royalty-free-vector/four-pointed-star-abstract-lights-christmas-vector-22450539" title="four-pointed star abstract lights christmas vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/05/39/four-pointed-star-abstract-lights-christmas-vector-22450539.jpg" title="four-pointed star abstract lights christmas" alt="four-pointed star abstract lights christmas vector image"></noscript></a></li>
+						<li data-id="25981809" data-title="postcard with christmas glitter trees bells and" data-src="https://cdn5.vectorstock.com/i/thumbs/18/09/postcard-with-christmas-glitter-trees-bells-and-vector-25981809.jpg"><a href="//www.vectorstock.com/royalty-free-vector/postcard-with-christmas-glitter-trees-bells-and-vector-25981809" title="postcard with christmas glitter trees bells and vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/18/09/postcard-with-christmas-glitter-trees-bells-and-vector-25981809.jpg" title="postcard with christmas glitter trees bells and" alt="postcard with christmas glitter trees bells and vector image"></noscript></a></li>
+						<li data-id="23004251" data-title="2019 happy new year greeting card background" data-src="https://cdn2.vectorstock.com/i/thumbs/42/51/2019-happy-new-year-greeting-card-background-vector-23004251.jpg"><a href="//www.vectorstock.com/royalty-free-vector/2019-happy-new-year-greeting-card-background-vector-23004251" title="2019 happy new year greeting card background vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/42/51/2019-happy-new-year-greeting-card-background-vector-23004251.jpg" title="2019 happy new year greeting card background" alt="2019 happy new year greeting card background vector image"></noscript></a></li>
+						<li data-id="27106075" data-title="christmas background design bokeh and light" data-src="https://cdn1.vectorstock.com/i/thumbs/60/75/christmas-background-design-bokeh-and-light-vector-27106075.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-background-design-bokeh-and-light-vector-27106075" title="christmas background design bokeh and light vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/60/75/christmas-background-design-bokeh-and-light-vector-27106075.jpg" title="christmas background design bokeh and light" alt="christmas background design bokeh and light vector image"></noscript></a></li>
+						<li data-id="1706180" data-title="Merry Christmas message and light background" data-src="https://cdn1.vectorstock.com/i/thumbs/61/80/merry-christmas-message-and-light-background-vector-1706180.jpg"><a href="//www.vectorstock.com/royalty-free-vector/merry-christmas-message-and-light-background-vector-1706180" title="Merry Christmas message and light background vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/61/80/merry-christmas-message-and-light-background-vector-1706180.jpg" title="Merry Christmas message and light background" alt="Merry Christmas message and light background vector image"></noscript></a></li>
+						<li data-id="20902415" data-title="realistic christmas tree toy ball star" data-src="https://cdn1.vectorstock.com/i/thumbs/24/15/realistic-christmas-tree-toy-ball-star-vector-20902415.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-christmas-tree-toy-ball-star-vector-20902415" title="realistic christmas tree toy ball star vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/24/15/realistic-christmas-tree-toy-ball-star-vector-20902415.jpg" title="realistic christmas tree toy ball star" alt="realistic christmas tree toy ball star vector image"></noscript></a></li>
+						<li data-id="22039733" data-title="christmas sale banner template shop now" data-src="https://cdn4.vectorstock.com/i/thumbs/97/33/christmas-sale-banner-template-shop-now-vector-22039733.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-sale-banner-template-shop-now-vector-22039733" title="christmas sale banner template shop now vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/97/33/christmas-sale-banner-template-shop-now-vector-22039733.jpg" title="christmas sale banner template shop now" alt="christmas sale banner template shop now vector image"></noscript></a></li>
+						<li data-id="23237796" data-title="christmas tree made from" data-src="https://cdn2.vectorstock.com/i/thumbs/77/96/christmas-tree-made-from-vector-23237796.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-tree-made-from-vector-23237796" title="christmas tree made from vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/77/96/christmas-tree-made-from-vector-23237796.jpg" title="christmas tree made from" alt="christmas tree made from vector image"></noscript></a></li>
+						<li data-id="22386006" data-title="xmas card whit holly berry" data-src="https://cdn2.vectorstock.com/i/thumbs/60/06/xmas-card-whit-holly-berry-vector-22386006.jpg"><a href="//www.vectorstock.com/royalty-free-vector/xmas-card-whit-holly-berry-vector-22386006" title="xmas card whit holly berry vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/60/06/xmas-card-whit-holly-berry-vector-22386006.jpg" title="xmas card whit holly berry" alt="xmas card whit holly berry vector image"></noscript></a></li>
+						<li data-id="22324875" data-title="happy new year 2019 lettering phrase on dark" data-src="https://cdn1.vectorstock.com/i/thumbs/48/75/happy-new-year-2019-lettering-phrase-on-dark-vector-22324875.jpg"><a href="//www.vectorstock.com/royalty-free-vector/happy-new-year-2019-lettering-phrase-on-dark-vector-22324875" title="happy new year 2019 lettering phrase on dark vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/48/75/happy-new-year-2019-lettering-phrase-on-dark-vector-22324875.jpg" title="happy new year 2019 lettering phrase on dark" alt="happy new year 2019 lettering phrase on dark vector image"></noscript></a></li>
+						<li data-id="22696108" data-title="christmas party banner with shining star and" data-src="https://cdn4.vectorstock.com/i/thumbs/61/08/christmas-party-banner-with-shining-star-and-vector-22696108.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-party-banner-with-shining-star-and-vector-22696108" title="christmas party banner with shining star and vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/61/08/christmas-party-banner-with-shining-star-and-vector-22696108.jpg" title="christmas party banner with shining star and" alt="christmas party banner with shining star and vector image"></noscript></a></li>
+						<li data-id="27128038" data-title="2019 happy new year background for your seasonal" data-src="https://cdn4.vectorstock.com/i/thumbs/80/38/2019-happy-new-year-background-for-your-seasonal-vector-27128038.jpg"><a href="//www.vectorstock.com/royalty-free-vector/2019-happy-new-year-background-for-your-seasonal-vector-27128038" title="2019 happy new year background for your seasonal vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/80/38/2019-happy-new-year-background-for-your-seasonal-vector-27128038.jpg" title="2019 happy new year background for your seasonal" alt="2019 happy new year background for your seasonal vector image"></noscript></a></li>
+						<li data-id="7742827" data-title="Elegant Christmas background with snowflakes" data-src="https://cdn3.vectorstock.com/i/thumbs/28/27/elegant-christmas-background-with-snowflakes-vector-7742827.jpg"><a href="//www.vectorstock.com/royalty-free-vector/elegant-christmas-background-with-snowflakes-vector-7742827" title="Elegant Christmas background with snowflakes vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/28/27/elegant-christmas-background-with-snowflakes-vector-7742827.jpg" title="Elegant Christmas background with snowflakes" alt="Elegant Christmas background with snowflakes vector image"></noscript></a></li>
+						<li data-id="22587136" data-title="sketch with cute christmas tree with new year and" data-src="https://cdn2.vectorstock.com/i/thumbs/71/36/sketch-with-cute-christmas-tree-with-new-year-and-vector-22587136.jpg"><a href="//www.vectorstock.com/royalty-free-vector/sketch-with-cute-christmas-tree-with-new-year-and-vector-22587136" title="sketch with cute christmas tree with new year and vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/71/36/sketch-with-cute-christmas-tree-with-new-year-and-vector-22587136.jpg" title="sketch with cute christmas tree with new year and" alt="sketch with cute christmas tree with new year and vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/background-email-star-vectors"><span class="lrg">More Background Email Star Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_MsMoloko" rel="nofollow">MsMoloko</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/11/86/christmas-sale-design-with-gold-glitter-and-star-vector-26201186.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-sale-design-with-gold-glitter-and-star-vector-26201186" title="christmas sale design with gold glitter and star vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/11/86/christmas-sale-design-with-gold-glitter-and-star-vector-26201186.jpg" title="christmas sale design with gold glitter and star" alt="christmas sale design with gold glitter and star vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/11/81/red-background-with-gold-glitter-and-star-shaped-vector-26201181.jpg"><a href="//www.vectorstock.com/royalty-free-vector/red-background-with-gold-glitter-and-star-shaped-vector-26201181" title="red background with gold glitter and star shaped vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/11/81/red-background-with-gold-glitter-and-star-shaped-vector-26201181.jpg" title="red background with gold glitter and star shaped" alt="red background with gold glitter and star shaped vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/11/80/christmas-sale-design-with-gold-glitter-and-star-vector-26201180.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-sale-design-with-gold-glitter-and-star-vector-26201180" title="christmas sale design with gold glitter and star vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/11/80/christmas-sale-design-with-gold-glitter-and-star-vector-26201180.jpg" title="christmas sale design with gold glitter and star" alt="christmas sale design with gold glitter and star vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/49/91/dark-christmas-sale-design-with-glowing-golden-vector-26734991.jpg"><a href="//www.vectorstock.com/royalty-free-vector/dark-christmas-sale-design-with-glowing-golden-vector-26734991" title="dark christmas sale design with glowing golden vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/49/91/dark-christmas-sale-design-with-glowing-golden-vector-26734991.jpg" title="dark christmas sale design with glowing golden" alt="dark christmas sale design with glowing golden vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/49/77/dark-christams-design-with-gold-glitter-on-the-vector-26734977.jpg"><a href="//www.vectorstock.com/royalty-free-vector/dark-christams-design-with-gold-glitter-on-the-vector-26734977" title="dark christams design with gold glitter on the vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/49/77/dark-christams-design-with-gold-glitter-on-the-vector-26734977.jpg" title="dark christams design with gold glitter on the" alt="dark christams design with gold glitter on the vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/49/88/dark-christmas-sale-design-with-glowing-golden-vector-26734988.jpg"><a href="//www.vectorstock.com/royalty-free-vector/dark-christmas-sale-design-with-glowing-golden-vector-26734988" title="dark christmas sale design with glowing golden vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/49/88/dark-christmas-sale-design-with-glowing-golden-vector-26734988.jpg" title="dark christmas sale design with glowing golden" alt="dark christmas sale design with glowing golden vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/49/81/christmas-sale-design-with-red-glitter-vector-26734981.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-sale-design-with-red-glitter-vector-26734981" title="christmas sale design with red glitter vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/49/81/christmas-sale-design-with-red-glitter-vector-26734981.jpg" title="christmas sale design with red glitter" alt="christmas sale design with red glitter vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/49/84/christmas-sale-design-with-pine-tree-branches-vector-26734984.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-sale-design-with-pine-tree-branches-vector-26734984" title="christmas sale design with pine tree branches vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/49/84/christmas-sale-design-with-pine-tree-branches-vector-26734984.jpg" title="christmas sale design with pine tree branches" alt="christmas sale design with pine tree branches vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/49/94/christmas-sale-design-with-pine-tree-branches-vector-26734994.jpg"><a href="//www.vectorstock.com/royalty-free-vector/christmas-sale-design-with-pine-tree-branches-vector-26734994" title="christmas sale design with pine tree branches vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/49/94/christmas-sale-design-with-pine-tree-branches-vector-26734994.jpg" title="christmas sale design with pine tree branches" alt="christmas sale design with pine tree branches vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/50/12/round-christmas-design-with-light-bulb-garland-vector-26735012.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-light-bulb-garland-vector-26735012" title="round christmas design with light bulb garland vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/50/12/round-christmas-design-with-light-bulb-garland-vector-26735012.jpg" title="round christmas design with light bulb garland" alt="round christmas design with light bulb garland vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="26735003" data-title="round christmas design with decorative light bulb" data-src="https://cdn4.vectorstock.com/i/thumbs/50/03/round-christmas-design-with-decorative-light-bulb-vector-26735003.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-decorative-light-bulb-vector-26735003" title="round christmas design with decorative light bulb vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/50/03/round-christmas-design-with-decorative-light-bulb-vector-26735003.jpg" title="round christmas design with decorative light bulb" alt="round christmas design with decorative light bulb vector image vector image"></noscript></a></li>
+						<li data-id="26734999" data-title="round christmas design with decorative light bulb" data-src="https://cdn5.vectorstock.com/i/thumbs/49/99/round-christmas-design-with-decorative-light-bulb-vector-26734999.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-decorative-light-bulb-vector-26734999" title="round christmas design with decorative light bulb vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/49/99/round-christmas-design-with-decorative-light-bulb-vector-26734999.jpg" title="round christmas design with decorative light bulb" alt="round christmas design with decorative light bulb vector image vector image"></noscript></a></li>
+						<li data-id="26735007" data-title="round christmas design with light bulb garland" data-src="https://cdn3.vectorstock.com/i/thumbs/50/07/round-christmas-design-with-light-bulb-garland-vector-26735007.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-light-bulb-garland-vector-26735007" title="round christmas design with light bulb garland vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/50/07/round-christmas-design-with-light-bulb-garland-vector-26735007.jpg" title="round christmas design with light bulb garland" alt="round christmas design with light bulb garland vector image vector image"></noscript></a></li>
+						<li data-id="26735039" data-title="round christmas design with light bulb garland on" data-src="https://cdn5.vectorstock.com/i/thumbs/50/39/round-christmas-design-with-light-bulb-garland-on-vector-26735039.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-light-bulb-garland-on-vector-26735039" title="round christmas design with light bulb garland on vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/50/39/round-christmas-design-with-light-bulb-garland-on-vector-26735039.jpg" title="round christmas design with light bulb garland on" alt="round christmas design with light bulb garland on vector image vector image"></noscript></a></li>
+						<li data-id="26735036" data-title="round christmas design with light bulb garland on" data-src="https://cdn2.vectorstock.com/i/thumbs/50/36/round-christmas-design-with-light-bulb-garland-on-vector-26735036.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-light-bulb-garland-on-vector-26735036" title="round christmas design with light bulb garland on vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/50/36/round-christmas-design-with-light-bulb-garland-on-vector-26735036.jpg" title="round christmas design with light bulb garland on" alt="round christmas design with light bulb garland on vector image vector image"></noscript></a></li>
+						<li data-id="27076486" data-title="light lens flare effect bright golden" data-src="https://cdn2.vectorstock.com/i/thumbs/64/86/light-lens-flare-effect-bright-golden-vector-27076486.jpg"><a href="//www.vectorstock.com/royalty-free-vector/light-lens-flare-effect-bright-golden-vector-27076486" title="light lens flare effect bright golden vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/86/light-lens-flare-effect-bright-golden-vector-27076486.jpg" title="light lens flare effect bright golden" alt="light lens flare effect bright golden vector image vector image"></noscript></a></li>
+						<li data-id="27076494" data-title="light lens flare effect bright golden" data-src="https://cdn5.vectorstock.com/i/thumbs/64/94/light-lens-flare-effect-bright-golden-vector-27076494.jpg"><a href="//www.vectorstock.com/royalty-free-vector/light-lens-flare-effect-bright-golden-vector-27076494" title="light lens flare effect bright golden vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/64/94/light-lens-flare-effect-bright-golden-vector-27076494.jpg" title="light lens flare effect bright golden" alt="light lens flare effect bright golden vector image vector image"></noscript></a></li>
+						<li data-id="27076496" data-title="light lens flare effect bright golden" data-src="https://cdn2.vectorstock.com/i/thumbs/64/96/light-lens-flare-effect-bright-golden-vector-27076496.jpg"><a href="//www.vectorstock.com/royalty-free-vector/light-lens-flare-effect-bright-golden-vector-27076496" title="light lens flare effect bright golden vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/96/light-lens-flare-effect-bright-golden-vector-27076496.jpg" title="light lens flare effect bright golden" alt="light lens flare effect bright golden vector image vector image"></noscript></a></li>
+						<li data-id="27076489" data-title="light lens flare effect bright golden" data-src="https://cdn5.vectorstock.com/i/thumbs/64/89/light-lens-flare-effect-bright-golden-vector-27076489.jpg"><a href="//www.vectorstock.com/royalty-free-vector/light-lens-flare-effect-bright-golden-vector-27076489" title="light lens flare effect bright golden vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/64/89/light-lens-flare-effect-bright-golden-vector-27076489.jpg" title="light lens flare effect bright golden" alt="light lens flare effect bright golden vector image vector image"></noscript></a></li>
+						<li data-id="26735024" data-title="round christmas design with light bulb garland and" data-src="https://cdn5.vectorstock.com/i/thumbs/50/24/round-christmas-design-with-light-bulb-garland-and-vector-26735024.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-light-bulb-garland-and-vector-26735024" title="round christmas design with light bulb garland and vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/50/24/round-christmas-design-with-light-bulb-garland-and-vector-26735024.jpg" title="round christmas design with light bulb garland and" alt="round christmas design with light bulb garland and vector image vector image"></noscript></a></li>
+						<li data-id="27076491" data-title="light lens flare effect bright golden" data-src="https://cdn2.vectorstock.com/i/thumbs/64/91/light-lens-flare-effect-bright-golden-vector-27076491.jpg"><a href="//www.vectorstock.com/royalty-free-vector/light-lens-flare-effect-bright-golden-vector-27076491" title="light lens flare effect bright golden vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/91/light-lens-flare-effect-bright-golden-vector-27076491.jpg" title="light lens flare effect bright golden" alt="light lens flare effect bright golden vector image vector image"></noscript></a></li>
+						<li data-id="27008955" data-title="gold glitter backdrop transparent falling" data-src="https://cdn1.vectorstock.com/i/thumbs/89/55/gold-glitter-backdrop-transparent-falling-vector-27008955.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gold-glitter-backdrop-transparent-falling-vector-27008955" title="gold glitter backdrop transparent falling vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/89/55/gold-glitter-backdrop-transparent-falling-vector-27008955.jpg" title="gold glitter backdrop transparent falling" alt="gold glitter backdrop transparent falling vector image vector image"></noscript></a></li>
+						<li data-id="27076483" data-title="gold glitter backdrop transparent falling" data-src="https://cdn4.vectorstock.com/i/thumbs/64/83/gold-glitter-backdrop-transparent-falling-vector-27076483.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gold-glitter-backdrop-transparent-falling-vector-27076483" title="gold glitter backdrop transparent falling vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/64/83/gold-glitter-backdrop-transparent-falling-vector-27076483.jpg" title="gold glitter backdrop transparent falling" alt="gold glitter backdrop transparent falling vector image vector image"></noscript></a></li>
+						<li data-id="27076475" data-title="gold glitter backdrop transparent falling" data-src="https://cdn1.vectorstock.com/i/thumbs/64/75/gold-glitter-backdrop-transparent-falling-vector-27076475.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gold-glitter-backdrop-transparent-falling-vector-27076475" title="gold glitter backdrop transparent falling vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/64/75/gold-glitter-backdrop-transparent-falling-vector-27076475.jpg" title="gold glitter backdrop transparent falling" alt="gold glitter backdrop transparent falling vector image vector image"></noscript></a></li>
+						<li data-id="27076473" data-title="gold glitter backdrop transparent falling" data-src="https://cdn4.vectorstock.com/i/thumbs/64/73/gold-glitter-backdrop-transparent-falling-vector-27076473.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gold-glitter-backdrop-transparent-falling-vector-27076473" title="gold glitter backdrop transparent falling vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/64/73/gold-glitter-backdrop-transparent-falling-vector-27076473.jpg" title="gold glitter backdrop transparent falling" alt="gold glitter backdrop transparent falling vector image vector image"></noscript></a></li>
+						<li data-id="27076479" data-title="gold glitter backdrop transparent falling" data-src="https://cdn5.vectorstock.com/i/thumbs/64/79/gold-glitter-backdrop-transparent-falling-vector-27076479.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gold-glitter-backdrop-transparent-falling-vector-27076479" title="gold glitter backdrop transparent falling vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/64/79/gold-glitter-backdrop-transparent-falling-vector-27076479.jpg" title="gold glitter backdrop transparent falling" alt="gold glitter backdrop transparent falling vector image vector image"></noscript></a></li>
+						<li data-id="26735020" data-title="round christmas design with light bulb garland on" data-src="https://cdn1.vectorstock.com/i/thumbs/50/20/round-christmas-design-with-light-bulb-garland-on-vector-26735020.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-light-bulb-garland-on-vector-26735020" title="round christmas design with light bulb garland on vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/50/20/round-christmas-design-with-light-bulb-garland-on-vector-26735020.jpg" title="round christmas design with light bulb garland on" alt="round christmas design with light bulb garland on vector image vector image"></noscript></a></li>
+						<li data-id="26735015" data-title="round christmas design with light bulb garland on" data-src="https://cdn1.vectorstock.com/i/thumbs/50/15/round-christmas-design-with-light-bulb-garland-on-vector-26735015.jpg"><a href="//www.vectorstock.com/royalty-free-vector/round-christmas-design-with-light-bulb-garland-on-vector-26735015" title="round christmas design with light bulb garland on vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/50/15/round-christmas-design-with-light-bulb-garland-on-vector-26735015.jpg" title="round christmas design with light bulb garland on" alt="round christmas design with light bulb garland on vector image vector image"></noscript></a></li>
+						<li data-id="26201197" data-title="floral spring design with white and yellow flowers" data-src="https://cdn3.vectorstock.com/i/thumbs/11/97/floral-spring-design-with-white-and-yellow-flowers-vector-26201197.jpg"><a href="//www.vectorstock.com/royalty-free-vector/floral-spring-design-with-white-and-yellow-flowers-vector-26201197" title="floral spring design with white and yellow flowers vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/11/97/floral-spring-design-with-white-and-yellow-flowers-vector-26201197.jpg" title="floral spring design with white and yellow flowers" alt="floral spring design with white and yellow flowers vector image vector image"></noscript></a></li>
+						<li data-id="26201198" data-title="floral spring design with white and yellow flowers" data-src="https://cdn4.vectorstock.com/i/thumbs/11/98/floral-spring-design-with-white-and-yellow-flowers-vector-26201198.jpg"><a href="//www.vectorstock.com/royalty-free-vector/floral-spring-design-with-white-and-yellow-flowers-vector-26201198" title="floral spring design with white and yellow flowers vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/11/98/floral-spring-design-with-white-and-yellow-flowers-vector-26201198.jpg" title="floral spring design with white and yellow flowers" alt="floral spring design with white and yellow flowers vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_MsMoloko" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/background-vectors">Background</a></li>
+					<li><a href="/royalty-free-vectors/email-vectors">Email</a></li>
+					<li><a href="/royalty-free-vectors/star-vectors">Star</a></li>
+					<li><a href="/royalty-free-vectors/red-vectors">Red</a></li>
+					<li><a href="/royalty-free-vectors/glitter-vectors">Glitter</a></li>
+					<li><a href="/royalty-free-vectors/celebration-vectors">Celebration</a></li>
+					<li><a href="/royalty-free-vectors/abstract-vectors">Abstract</a></li>
+					<li><a href="/royalty-free-vectors/xmas-vectors">Xmas</a></li>
+					<li><a href="/royalty-free-vectors/banner-vectors">Banner</a></li>
+					<li><a href="/royalty-free-vectors/decoration-vectors">Decoration</a></li>
+					<li><a href="/royalty-free-vectors/confetti-vectors">Confetti</a></li>
+					<li><a href="/royalty-free-vectors/merry-vectors">Merry</a></li>
+					<li><a href="/royalty-free-vectors/poster-vectors">Poster</a></li>
+					<li><a href="/royalty-free-vectors/year-vectors">Year</a></li>
+					<li><a href="/royalty-free-vectors/special-vectors">Special</a></li>
+					<li><a href="/royalty-free-vectors/store-vectors">Store</a></li>
+					<li><a href="/royalty-free-vectors/market-vectors">Market</a></li>
+					<li><a href="/royalty-free-vectors/promotion-vectors">Promotion</a></li>
+					<li><a href="/royalty-free-vectors/vector-vectors">Vector</a></li>
+					<li><a href="/royalty-free-vectors/christmas-vectors">Christmas</a></li>
+					<li><a href="/royalty-free-vectors/illustration-vectors">Illustration</a></li>
+					<li><a href="/royalty-free-vectors/holiday-vectors">Holiday</a></li>
+					<li><a href="/royalty-free-vectors/decorative-vectors">Decorative</a></li>
+					<li><a href="/royalty-free-vectors/tag-vectors">Tag</a></li>
+					<li><a href="/royalty-free-vectors/fairy-vectors">Fairy</a></li>
+					<li><a href="/royalty-free-vectors/light-vectors">Light</a></li>
+					<li><a href="/royalty-free-vectors/template-vectors">Template</a></li>
+					<li><a href="/royalty-free-vectors/new-vectors">New</a></li>
+					<li><a href="/royalty-free-vectors/card-vectors">Card</a></li>
+					<li><a href="/royalty-free-vectors/shop-vectors">Shop</a></li>
+					<li><a href="/royalty-free-vectors/design-vectors">Design</a></li>
+					<li><a href="/royalty-free-vectors/solemnity-vectors">Solemnity</a></li>
+					<li><a href="/royalty-free-vectors/rewarding-vectors">Rewarding</a></li>
+					<li><a href="/royalty-free-vectors/triumph-vectors">Triumph</a></li>
+					<li><a href="/royalty-free-vectors/fiesta-vectors">Fiesta</a></li>
+					<li><a href="/royalty-free-vectors/feast-vectors">Feast</a></li>
+					<li><a href="/royalty-free-vectors/advertising-vectors">Advertising</a></li>
+					<li><a href="/royalty-free-vectors/offer-vectors">Offer</a></li>
+					<li><a href="/royalty-free-vectors/frame-vectors">Frame</a></li>
+					<li><a href="/royalty-free-vectors/prize-vectors">Prize</a></li>
+					<li><a href="/royalty-free-vectors/glow-vectors">Glow</a></li>
+					<li><a href="/royalty-free-vectors/flyer-vectors">Flyer</a></li>
+					<li><a href="/royalty-free-vectors/fashion-vectors">Fashion</a></li>
+					<li><a href="/royalty-free-vectors/bright-vectors">Bright</a></li>
+					<li><a href="/royalty-free-vectors/birthday-vectors">Birthday</a></li>
+					<li><a href="/royalty-free-vectors/festive-vectors">Festive</a></li>
+					<li><a href="/royalty-free-vectors/sale-vectors">Sale</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/account/sell-vectors" title="Become a VectorStock Contributor">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2019. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJFw0GEg==","queueTime":0,"applicationTime":37,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>
